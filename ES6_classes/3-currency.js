@@ -31,4 +31,8 @@ class Currency {
     }
     this._name = value;
   }
+
+  displayFullCurrency() {
+    return `${this._name} (${this._code})`;
+  }
 }
