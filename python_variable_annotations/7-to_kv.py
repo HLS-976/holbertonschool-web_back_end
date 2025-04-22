@@ -7,5 +7,5 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple:
     """
     This function returns a tuple of two elements
     """
-    v = (v ** 2)
+    v = v ** 2
     return tuple(k, v)
