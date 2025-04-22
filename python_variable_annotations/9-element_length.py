@@ -3,5 +3,5 @@
 from typing import List, Union, Tuple
 
 
-def element_length(lst: List[Union[int, float, str]]) -> List[Tuple[str, int]]:
+def element_length(lst: List[Union[int, float, str]]) -> List[Tuple[int, int]]:
     return [(i, len(i)) for i in lst]
