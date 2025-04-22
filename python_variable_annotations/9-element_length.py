@@ -3,5 +3,5 @@
 from typing import List, Union, Iterator
 
 
-def element_length(lst: List[Union[int, float, str]]) -> Iterator[int]:
+def element_length(lst: List[Union[int, float, str]]) -> List[Iterator[int, int]]:
     return [(i, len(i)) for i in lst]
