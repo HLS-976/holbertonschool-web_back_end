@@ -3,9 +3,8 @@
 from typing import Tuple, Union
 
 
-def to_kv(k: str, v: Union[int, float]) -> Tuple:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """
     This function returns a tuple of two elements
     """
-    v = v ** 2
-    return tuple(k, v)
+    return tuple(k, float(v ** 2))
