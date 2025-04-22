@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """This module provides the elemnet_length function"""
-from typing import List, Union, Tuple
+from typing import Iterable, Sequence, List, Tuple
 
 
-def element_length(lst: List[Union[int, float, str]]) -> List[Tuple[int, int]]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    """Returns a list of tuples with elements and their lengths"""
     return [(i, len(i)) for i in lst]
