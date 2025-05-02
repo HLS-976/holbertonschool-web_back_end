@@ -20,7 +20,7 @@ def log_stats():
     print("Methods:")
     for method in methods:
         method_qty = collection.count_documents({"method": method})
-        print(f"\tmethod {method}: {method_qty}")
+        print(f"\t{method}: {method_qty}")
     print(f"{status_check} status check")
 
 
