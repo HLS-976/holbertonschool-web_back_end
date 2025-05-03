@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
-""" This script counts the number of documents in a NoSQL database. """
-
-
+"""
+    Log stats
+"""
 from pymongo import MongoClient
 
 
-def log_stats(mongo_collection):
-    """ Provides some stats about the school collection. """
-    client = MongoClient('localhost', 27017)
+def log_stats():
+    """
+        Log stats
+    """
+    client = MongoClient('mongodb://localhost:27017/')
     db = client.logs
     collection = db.nginx
 
-    total_logs = collection.count_documents({})
-    print(f"{total_logs} logs")
-
+    logs_count = collection.count_documents({})
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    status_check = collection.count_documents({
+        "method": "GET", "path": "/status"})
+    print(f"{logs_count} logs")
     print("Methods:")
-
     for method in methods:
-        method_count = collection.count_documents({"method": method})
-        print(f"\tmethod {method}: {method_count}")
-
-    status_c = collection.count_documents({"method": "GET", "path": "/status"})
-    print(f"{status_c} status check")
+        count = collection.count_documents({"method": method})
+        print(f"\tmethod {method}: {count}")
+    print(f"{status_check} status check")
 
 
 if __name__ == "__main__":
