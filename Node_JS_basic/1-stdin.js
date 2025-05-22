@@ -1,13 +1,15 @@
-const process = require('process');
+const std = require('process');
 
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+std.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-process.stdin.on('data', () => {
-  const name = process.stdin.read();
-  process.stdout.write(`Your name is: ${name}\n`);
-  process.exit();
+std.stdin.on('readable', () => {
+  const name = std.stdin.read();
+  if (name) {
+    std.stdout.write(`Your name is: ${name}`);
+  }
+  std.exit();
 });
 
-process.on('exit', () => {
-  process.stdout.write('This important software is now closing\n');
+std.on('exit', () => {
+  std.stdout.write('This important software is now closing\n');
 });
