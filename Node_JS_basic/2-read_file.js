@@ -24,3 +24,5 @@ function countStudents(filePath) {
     console.log('Cannot load the database');
   }
 }
+
+module.exports(countStudents);
