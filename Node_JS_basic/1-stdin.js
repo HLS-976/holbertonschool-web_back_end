@@ -9,7 +9,6 @@ std.stdin.on('readable', () => {
   }
   std.exit();
 });
-
 std.on('exit', () => {
   std.stdout.write('This important software is now closing\n');
 });
