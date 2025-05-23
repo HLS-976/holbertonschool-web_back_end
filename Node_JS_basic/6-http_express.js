@@ -9,3 +9,5 @@ app.get('/', (req, res) => {
 app.listen(1245, () => {
   console.log('Server listening at http://localhost:1245');
 });
+
+module.export = app;
