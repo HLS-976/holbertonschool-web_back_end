@@ -2,6 +2,7 @@ const http = require('http');
 
 const app = http.createServer((request, response) => {
   response.setHeader('Content-Type', 'text/plain');
+  response.statusCode = 200;
   response.write('Hello Holberton School!');
   response.end();
 });
