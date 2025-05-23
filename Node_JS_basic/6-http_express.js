@@ -1,13 +1,14 @@
 const express = require('express');
 
 const app = express();
+const port = 1245;
 
 app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
-})
-
-app.listen(1245, () => {
-  console.log('Server listening at http://localhost:1245');
 });
 
-module.export = app;
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+
+module.exports = app;
