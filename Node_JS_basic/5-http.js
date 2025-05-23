@@ -53,7 +53,7 @@ const app = http.createServer(async (req, res) => {
 });
 
 app.listen(1245, () => {
-  console.log('Server running on port 1245');
+  console.log('Server running on port http://localhost:1245');
 });
 
 module.exports = app;
