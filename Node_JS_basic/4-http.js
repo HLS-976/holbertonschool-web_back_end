@@ -1,7 +1,8 @@
 const http = require('http');
 
 const app = http.createServer((request, response) => {
-  response.writeHead(200, {'content-type': 'utf-8'})
+  response.setHeader('Content-Type', 'text/plain');
+  response.statusCode = 200;
   response.end('Hello Holberton School!');
 });
 
